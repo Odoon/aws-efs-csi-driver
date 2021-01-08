@@ -3,7 +3,7 @@ kind: Kustomization
 bases:
 - ../../../base
 images:
- - name: amazon/aws-ebs-csi-driver
+ - name: amazon/aws-efs-csi-driver
    newTag: master
  - name: quay.io/k8scsi/csi-provisioner
    newName: raspbernetes/csi-external-provisioner
