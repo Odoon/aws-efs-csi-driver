@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../../base
+images:
+ - name: amazon/aws-ebs-csi-driver
+   newTag: master
+ - name: quay.io/k8scsi/csi-provisioner
+   newName: raspbernetes/csi-external-provisioner
+   newTag: "2.0.2"
+ - name: quay.io/k8scsi/csi-attacher
+   newName: raspbernetes/csi-external-attacher
+   newTag: "3.0.0"
+ - name: quay.io/k8scsi/livenessprobe
+   newName: k8s.gcr.io/sig-storage/livenessprobe
+   newTag: "v2.1.0"
+ - name: quay.io/k8scsi/csi-node-driver-registrar
+   newName: k8s.gcr.io/sig-storage/csi-node-driver-registrar
+   newTag: "v2.0.1"
